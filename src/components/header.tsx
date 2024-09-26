@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Logo from "./logo";
+import { LoginPage } from "./login";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,22 +22,7 @@ function Header() {
           className="lg:hidden p-2"
           onClick={toggleMenu}
           aria-label="Toggle navigation"
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            />
-          </svg>
-        </button>
+        ></button>
         <nav
           className={`lg:flex lg:space-x-4 ${isMenuOpen ? "block" : "hidden"}`}
         >
@@ -53,8 +39,18 @@ function Header() {
             </li>
             <li>
               <Link className="hover:underline" href="/contact">
-                Contact
+                Updates
               </Link>
+            </li>
+            <li>
+              <Link className="hover:underline" href="/contact">
+                Contacts
+              </Link>
+            </li>
+          </ul>
+          <ul className="flex justify-between items-center">
+            <li>
+              <LoginPage />
             </li>
           </ul>
         </nav>
